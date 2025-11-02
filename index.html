@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ameer Shaik - Fullstack Java & DevOps Resume</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0; padding: 40px;
+    background: #f9f9f9;
+    color: #333;
+  }
+  a {
+    text-decoration: none;
+    color: #007acc;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Container */
+  .resume-container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 0.1);
+    position: relative;
+  }
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .name-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+  }
+  .title {
+    font-weight: 500;
+    color: #666;
+    margin-top: 4px;
+  }
+  .contact-info {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .contact-info div {
+    margin-bottom: 4px;
+  }
+
+  /* Buttons top right */
+  .action-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 100;
+  }
+  button {
+    background: #007acc;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #005fa3;
+  }
+
+  /* Section styling */
+  section {
+    margin-top: 32px;
+  }
+  h2 {
+    border-bottom: 2px solid #007acc;
+    padding-bottom: 6px;
+    color: #007acc;
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 1.4rem;
+  }
+
+  /* Text formatting */
+  p, li {
+    line-height: 1.5;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  .skills-list {
+    columns: 2;
+    list-style: none;
+    padding-left: 0;
+  }
+  .skills-list li::before {
+    content: "• ";
+    color: #007acc;
+  }
+
+  /* Work Experience */
+  .job {
+    margin-bottom: 24px;
+  }
+  .job-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #222;
+  }
+  .job-company {
+    font-style: italic;
+    color: #555;
+  }
+  .job-date {
+    float: right;
+    font-size: 0.9rem;
+    color: #999;
+  }
+  .clear {
+    clear: both;
+  }
+
+  /* Education and Certifications */
+  .edu-item, .cert-item {
+    margin-bottom: 16px;
+  }
+  .edu-title, .cert-title {
+    font-weight: 600;
+  }
+  .edu-subtitle, .cert-subtitle {
+    font-style: italic;
+    color: #555;
+  }
+
+  /* Languages */
+  .language-list {
+    display: flex;
+    gap: 20px;
+  }
+  .language-item {
+    text-align: center;
+  }
+  .stars {
+    color: #f39c12;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  /* Personal Details */
+  .personal-info div {
+    margin-bottom: 6px;
+  }
+
+  .photo {
+    width: 120px;
+    height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #004080;
+  }
+
+  .header-flex {
+  display: flex;
+  align-items: center;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.name-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: #004080;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+@media print {
+  .action-buttons {
+    display: none !important;
+  }
+
+  #resume {
+    display: block !important;
+    color: black !important;
+    background: white !important;
+  }
+
+  body {
+    background: white !important;
+  }
+}
+
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .action-buttons {
+    display: none !important;
+  }
+
+  #resume {
+    display: block !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- Action Buttons 
+<div class="action-buttons">
+  <button id="downloadPdf">Download PDF</button>
+  <button id="printBtn">Print</button>
+</div>   -->
+
+<!-- Resume Container -->
+<div class="resume-container" id="resume">
+
+<header>
+
+<div class="header-flex">
+  <img src="your-photo.jpg" alt="Passport Photo" class="photo" />
+  
+  <div class="header-text">
+    <div class="name-title">Ameer Basha Shaik</div>
+    <div class="title">Technical Manager</div>
+  </div>
+</div>
+
+
+  
+  <div class="contact-info">
+    <div>Wheeling, IL</div>
+    <div>+1 XXX-XXX-XXXX</div>
+    <div><a href="mailto:ameer.a.shaik@capgemini.com">ameer.a.shaik@capgemini.com</a></div>
+    
+  </div>
+</header>
+
+<section>
+  <h2>Professional Summary</h2>
+  <p>Dynamic technology manager with over 14 years of experience designing and delivering robust Java-based enterprise applications. Expertise in Spring framework and microservices architecture, with proven skills in cloud-native technologies including Kubernetes, AWS, and CI/CD pipelines. Adept at leading cross-functional teams in agile environments, driving innovation, and ensuring scalable, maintainable software solutions. Passionate about continuous learning and mentoring, excelling in fast-paced global delivery environments.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <ul class="skills-list">
+    <li><strong>Frameworks:</strong> Spring Boot, Spring MVC, Hibernate</li>
+    <li><strong>Frontend:</strong> React.js, HTML, JavaScript, CSS, Freemarker, JSP</li>
+    <li><strong>Cloud & DevOps:</strong> AWS (Elastic Beanstalk, PCF), Azure, OpenShift, Docker, Kubernetes</li>
+    <li><strong>Tools:</strong> Jenkins, Git, AppDynamics, Kibana</li>
+    <li><strong>Databases:</strong> Oracle, MySQL, Redis, MongoDB</li>
+    <li><strong>Languages:</strong> Java 8, Python, C, C++</li>
+    <li><strong>Concepts:</strong> Microservices, REST APIs, OOP, SDLC, Agile, CI/CD</li>
+    <li><strong>Soft Skills:</strong> Leadership, Adaptability, Communication, Problem Solving, Teamwork</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Work Experience</h2>
+
+  <div class="job">
+    <div>
+      <span class="job-title">Technical Manager</span>
+      <span class="job-date">October-2025 - present</span>
+    </div>
+    <div class="job-company">Capgemini Financial Services, Chicago, IL</div>
+    <p>
+      Lead teams in designing and implementing Spring Boot microservices for financial applications using 12-factor app principles on PCF and Kubernetes. Architected cloud solutions leveraging AWS infrastructure components (VPC, EC2, S3, RDS). Drove CI/CD pipeline improvements using Jenkins and GitLab, boosting deployment efficiency. Applied Saga pattern (Choreography & Orchestration) and resilience patterns (Eureka, Netflix OSS Circuit Breaker). Mentored developers on Agile practices, microservices, and cloud-native development.
+    </p>
+
+  </div>
+
+  <div class="job">
+    <div>
+      <span class="job-title">Technical Manager</span>
+      <span class="job-date">Dec-2021 – Oct-2025</span>
+    </div>
+    <div class="job-company">Capgemini Financial Services, Mississauga, ON</div>
+    
+  </div>
+
+  <div class="job">
+    <div>
+      <span class="job-title">Senior Consultant</span>
+      <span class="job-date">Apr 2018 – Apr 2020</span>
+    </div>
+    <div class="job-company">Capgemini Financial Services, Hyderabad, India</div>
+  </div>
+
+  <div class="job">
+    <div>
+      <span class="job-title">Consultant</span>
+      <span class="job-date">Feb 2015 – Apr 2017</span>
+    </div>
+    <div class="job-company">Capgemini Financial Services, Hyderabad, India</div>
+  </div>
+
+  <div class="job">
+    <div>
+      <span class="job-title">Senior Software Engineer</span>
+      <span class="job-date">Jul 2013 – Feb 2015</span>
+    </div>
+    <div class="job-company">NIIT Technologies</div>
+    
+  </div>
+
+  <div class="job">
+    <div>
+      <span class="job-title">Software Engineer</span>
+      <span class="job-date">Mar 2011 – Feb 2013</span>
+    </div>
+    <div class="job-company">Infinite Computer Solutions, Bengaluru, India</div>
+   
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu-item">
+    <div class="edu-title">Bachelor’s degree in Computer Applications (BSc)</div>
+    <div class="edu-subtitle">Guntur University, Guntur (2004 – 2007)</div>
+  </div>
+</section>
+
+ <div class="section">
+    <h2>Professional Experience</h2>
+
+    <div>
+      <div class="job-title">Sr. Developer & Manager of Deposits Value Stream</div>
+      <div class="location-date">Discover Financial Services, Riverwoods, USA | Hyderabad, India | Mississauga, Canada<br>February 2015 – Present</div>
+      <ul>
+        <li>Developing and deploying Spring Boot micro-services on PCF using 12-factor app methodology.</li>
+        <li>Collaborated with architects to convert business requirements into technical designs.</li>
+        <li>Delivered RESTful applications using CI/CD, GitLab, Jenkins, Sonar, and Docker.</li>
+        <li>Responsible for technical planning including design, code reviews, and delivery.</li>
+        <li>Implemented BDD and TDD (JUnit, Playwright) for automation and quality assurance.</li>
+        <li>Applied Saga pattern (Choreography & Orchestration) in micro-services architecture.</li>
+        <li>Used Eureka, Netflix OSS, Circuit Breaker for resilient micro-services.</li>
+        <li>Worked with AWS (VPC, EC2, ALB/NLB, S3, RDS, EBS) for cloud infrastructure setup.</li>
+        <li>Leveraged tools like Kafka, SLAM, Trident, Kibana for monitoring and messaging.</li>
+        <li>Maintained documentation in Rally and SharePoint; resolved defects and proposed solutions.</li>
+        <li>Consistently delivered value-added features aligned with client business goals.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-title">Sr. Developer – IRIS</div>
+      <div class="location-date">DB Mobile Network Logistics, Noida, India<br>July 2013 – February 2015</div>
+      <ul>
+        <li>Designed system architecture and developed components with design diagrams and business flowcharts.</li>
+        <li>Developed front-end using JSP, JSTL, JavaScript, HTML, CSS, AJAX, and Web 2.0 technologies.</li>
+        <li>Created robust backend solutions with Hibernate, Spring Framework, JPA, and EJB.</li>
+        <li>Integrated Oracle BPM and developed Spring MVC applications focusing on modularity and scalability.</li>
+        <li>Built UI components using JSF and handled events with JavaScript, Bootstrap, and jQuery.</li>
+        <li>Led technical delivery through agile lifecycle phases — requirement gathering, development, testing, and deployment.</li>
+        <li>Promoted best practices across the team and improved development processes.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="job-title">Medical Record Management System</div>
+      <div class="location-date">Xerox, USA | Bangalore, India<br>March 2011 – February 2013</div>
+      <ul>
+        <li>Developed a search-driven platform enabling access to executives, board members, and non-profit trustees.</li>
+        <li>Implemented Redis core caching with Spring Boot cache abstraction for performance and scalability.</li>
+        <li>Integrated Elasticsearch for fast, efficient search capabilities across large datasets.</li>
+        <li>Ensured code quality with eCobertura, PMD, FindBugs, and SonarQube continuous inspection.</li>
+        <li>Conducted application and database performance tuning using multi-threading and optimization.</li>
+        <li>Delivered high-quality features independently through Test-Driven Development (TDD).</li>
+        <li>Managed development-level risks and issues proactively.</li>
+        <li>Drove transformation in program management, establishing a Managed Service model.</li>
+        <li>Delivered continuous value improvements aligned with client business objectives.</li>
+      </ul>
+    </div>
+  </div>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="cert-item">
+    <div class="cert-title">Certified Kubernetes Application Developer (CKAD)</div>
+    <div class="cert-subtitle">The Linux Foundation, May 2025</div>
+  </div>
+  <div class="cert-item">
+    <div class="cert-title">AWS Certified Cloud Practitioner Essentials</div>
+    <div class="cert-subtitle">PacktPub, March 2025</div>
+  </div>
+</section>
+
+  <div class="section">
+    <h2>Key Clients Worked With</h2>
+    <ul>
+      <li>Discover Financial Services, USA</li>
+      <li>DB Mobile Network Logistics, UK</li>
+      <li>Xerox, USA</li>
+    </ul>
+  </div>
+
+ 
+
+<section>
+  <h2>Languages</h2>
+  <div class="language-list">
+    <div class="language-item">
+      <strong>English</strong>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="language-item">
+      <strong>Telugu</strong>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="language-item">
+      <strong>Hindi</strong>
+      <div class="stars">★★★☆☆</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Personal Information</h2>
+  <div class="personal-info">
+    <div><strong>Address:</strong> 1571 Hunter Drive, Apt-2A, Wheeling, IL 60090</div>
+    <div><strong>Date of Birth:</strong> 10-May-1987</div>
+    <div><strong>Nationality:</strong> Indian</div>
+    <div><strong>Hobbies:</strong> Exploring emerging tech, learning new frameworks and cloud tools</div>
+  </div>
+</section>
+
+</div>
+
+<!-- JS for PDF & Print -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+ const resumeContent = document.getElementById('resume');
+
+
+ document.getElementById('downloadPdf').addEventListener('click', () => {
+  const opt = {
+    margin: 0.5,
+    filename: 'Ameer_Shaik_Resume.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: {
+      scale: 2,
+      useCORS: true,
+      scrollY: 0
+    },
+    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(resumeContent).save().then(() => {
+    console.log("Download complete!");
+  });
+});
+
+
+  document.getElementById('printBtn').addEventListener('click', () => {
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write('<html><head><title>Print Resume</title>');
+    printWindow.document.write('<style>body{font-family:Roboto,sans-serif;padding:20px;}</style>');
+    printWindow.document.write('</head><body>');
+    printWindow.document.write(resumeContent.innerHTML);
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+    printWindow.close();
+  });
+
+ 
+</script>
+
+</body>
+</html>
+
