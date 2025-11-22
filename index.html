@@ -217,6 +217,12 @@
 
 
 @media print {
+
+  .header-text {
+    margin-left: 0 !important; /* remove left margin for print */
+    
+  }
+ 
   body {
     background: white !important;
     color: black !important;
@@ -242,6 +248,14 @@
 }
 
 
+@media print {
+    .photo {
+        display: none;
+    }
+}
+
+
+
 </style>
 </head>
 <body>
@@ -259,11 +273,14 @@
 
 <div class="header-flex">
   <img src="your-photo.jpg" alt="Passport Photo" class="photo" />
-  
-  <div class="header-text">
-    <div class="name-title">Ameer Basha Shaik</div>
+ 
+    
+ <div class="header-text">
+    <div class="name-title">Ameer S</div>
     <div class="title">Technical Manager</div>
   </div>
+
+ 
 </div>
 
 
